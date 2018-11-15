@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use dosamigos\datepicker\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model backend\modules\settings\models\Companies */
@@ -18,9 +19,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'company_address')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'logo')->textInput(['maxlength' => true]) ?>
+    <?php #$form->field($model, 'logo')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'company_start_date')->textInput() ?>
+    <?php #$form->field($model, 'company_start_date')->textInput() ?>
+
+    <?php /*$form->field($model, 'company_start_date')->widget(
+    DatePicker::className(), [
+        // inline too, not bad
+        //'inline' => true, 
+         // modify template for custom rendering
+        //'template' => '<div class="well well-sm" style="background-color: #fff; width:250px">{input}</div>',
+        'clientOptions' => [
+            'autoclose' => true,
+            'format' => 'yyyy-mm-dd'
+        ]
+    ]);*/?>
 
     <?= $form->field($model, 'company_created_date')->textInput() ?>
 
